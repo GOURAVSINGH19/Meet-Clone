@@ -11,7 +11,7 @@ const Personal = () => {
   const Router = useRouter();
 
   const meetingId = user?.id;
-  const meetingLink = `${process.env.NEXT_Meeting_BASE_URL}/meeting/${meetingId}}`;
+  const meetingLink = `${process.env.Base_Url}/meeting/${meetingId}}`;
   const { call } = useGetCallById(meetingId!);
   const client = useStreamVideoClient();
 

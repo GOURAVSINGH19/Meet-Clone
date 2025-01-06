@@ -72,7 +72,7 @@ const MeetingTypeList = () => {
         }
     }
 
-    const meetingLink = `${process.env.NEXT_Meeting_BASE_URL}/meeting/${CallDetails?.id}`;
+    const meetingLink = `${process.env.Base_Url}/meeting/${CallDetails?.id}`;
     return (
         <section className='grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4'>
             <Homecards
