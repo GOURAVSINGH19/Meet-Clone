@@ -87,9 +87,9 @@ const MeetingRoom = () => {
                 {
                     !isPersonalRoom && <EndCallButton />
                 }
-                {/* <div>
+                <div>
                     <CopyLinkpop />
-                </div> */}
+                </div>
             </div>
         </section>
     )
