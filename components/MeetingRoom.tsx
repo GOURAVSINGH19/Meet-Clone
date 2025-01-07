@@ -39,7 +39,10 @@ const MeetingRoom = () => {
         }
     }
     return (
-        <section className="relative h-screen w-full overflow-hidden pt-4 text-white bg-[#19232d]">
+        <section className="relative h-screen w-full overflow-hidden pt-4 text-white bg-dark-2">
+            <div className='absolute top-[.5rem] left-5 z-10  rounded-lg'>
+                <CopyLinkpop />
+            </div>
             <div className="relative h-full top-0 lef-0 flex  items-center justify-center">
                 <div className=" flex h-full  w-[50rem] items-center">
                     <CallLayout />
@@ -87,9 +90,6 @@ const MeetingRoom = () => {
                 {
                     !isPersonalRoom && <EndCallButton />
                 }
-                <div>
-                    <CopyLinkpop />
-                </div>
             </div>
         </section>
     )

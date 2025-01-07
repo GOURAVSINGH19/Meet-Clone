@@ -20,8 +20,8 @@ const Meeting = () => {
   if (!isLoaded || isCallLoading) return <Loader />
 
   if (!call) return (
-    <p className="text-center text-3xl font-bold text-white">
-      Call Not Found
+    <p className="text-center text-3xl font-bold text-white flex items-center justify-center   h-screen">
+      <Loader />
     </p>
   );
   const notAllowed = call.type === 'invited' && (!user || !call.state.members.find((m) => m.user.id === user.id));
@@ -31,7 +31,7 @@ const Meeting = () => {
   return (
     <div className='w-full h-screen'>
       <StreamCall call={call}>
-        <StreamTheme as="main" className='bg-black w-full h-full' >
+        <StreamTheme as="main" className='bg-dark-2 w-full h-full' >
           {
             !isSetupComplete ? (
               <MeetingSetup setisSetupComplete={setisSetupComplete} />

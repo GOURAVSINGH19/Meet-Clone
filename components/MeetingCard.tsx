@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-
 import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
 import { useToast } from "@/hooks/use-toast";
@@ -11,7 +10,7 @@ interface MeetingCardProps {
   title: string;
   date: string;
   icon: string;
-  isPreviousMeeting?: boolean;
+  isPreviousMeeting?: boolean;  
   buttonIcon1?: string;
   buttonText?: string;
   handleClick: () => void;
@@ -54,7 +53,7 @@ const MeetingCard = ({
               style={{ top: 0, left: index * 28 }}
             />
           ))}
-          <div className="flex-center absolute left-[136px] size-10 rounded-full border-[5px] border-dark-3 bg-dark-4">
+          <div className="flex-center absolute left-[140px] size-5 text-[.6rem] rounded-full border-[5px] border-dark-3 bg-dark-4">
             +5
           </div>
         </div>

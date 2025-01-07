@@ -9,7 +9,7 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { Toast } from './ui/toast';
 
-const CallList = ({ type }: { type: 'ended' | 'upcoming' | 'recordings' }) => {
+const CallList = ({ type }: { type: 'ended' | 'upcoming' | 'recording' }) => {
     const router = useRouter();
     const { endedCalls, upcomingCalls, callRecordings, isLoading } =
         useGetCalls();
@@ -19,7 +19,7 @@ const CallList = ({ type }: { type: 'ended' | 'upcoming' | 'recordings' }) => {
         switch (type) {
             case 'ended':
                 return endedCalls;
-            case 'recordings':
+            case 'recording':
                 return recordings;
             case 'upcoming':
                 return upcomingCalls;
@@ -34,7 +34,7 @@ const CallList = ({ type }: { type: 'ended' | 'upcoming' | 'recordings' }) => {
                 return 'No Previous Calls';
             case 'upcoming':
                 return 'No Upcoming Calls';
-            case 'recordings':
+            case 'recording':
                 return 'No Recordings';
             default:
                 return '';
@@ -55,11 +55,11 @@ const CallList = ({ type }: { type: 'ended' | 'upcoming' | 'recordings' }) => {
                 setRecordings(recordings);
             } catch (e) {
                 Toast({ title: "Try later" })
-            console.error(e);
+                console.error(e);
             }
         };
 
-        if (type === 'recordings') {
+        if (type === 'recording') {
             fetchRecordings();
         }
     }, [type, callRecordings]);
@@ -93,21 +93,21 @@ const CallList = ({ type }: { type: 'ended' | 'upcoming' | 'recordings' }) => {
                         }
                         isPreviousMeeting={type === 'ended'}
                         link={
-                            type === 'recordings'
+                            type === 'recording'
                                 ? (meeting as CallRecording).url
                                 : `${process.env.Base_Url}/meeting/${(meeting as Call).id}`
                         }
-                        buttonIcon1={type === 'recordings' ? '/icons/play.svg' : undefined}
-                        buttonText={type === 'recordings' ? 'Play' : 'Start'}
+                        buttonIcon1={type === 'recording' ? '/icons/play.svg' : undefined}
+                        buttonText={type === 'recording' ? 'Play' : 'Start'}
                         handleClick={
-                            type === 'recordings'
+                            type === 'recording'
                                 ? () => router.push(`${(meeting as CallRecording).url}`)
                                 : () => router.push(`/meeting/${(meeting as Call).id}`)
                         }
                     />
                 ))
             ) : (
-                <h1 className="text-xl flex justify-center items-center font-bold text-white">{noCallsMessage ? <Loader /> : ""}</h1>
+                <h1 className="text-xl  font-bold text-white ">{noCallsMessage}</h1>
             )}
         </div>
     );
