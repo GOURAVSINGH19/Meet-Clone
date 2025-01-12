@@ -7,7 +7,8 @@ import { RxCross1 } from "react-icons/rx";
 const CopyLinkpop = () => {
     const [visible, setVisibile] = useState<ReactNode>(true);
     const link = useParams();
-    const meetingLink = `localhost:3000/meeting/${link?.id}`;
+    const meetingLink = `${process.env.LOCALHOST_URL}/meeting/${link?.id}`;
+    console.log(meetingLink)
     return (
         <>
             {visible && <div className='w-full rounded-md  text-white bg-[#1166ee8f] relative'>
