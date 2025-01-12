@@ -14,7 +14,7 @@ import EndCallButton from './EndCallButton'
 import Loader from './Loader'
 import CopyLinkpop from './CopyLinkpop'
 
-type callLayoutType = 'slidebar' | 'speaker-left' | 'speaker-right'
+type callLayoutType = 'Grid' | 'speaker-left' | 'speaker-right'
 
 const MeetingRoom = () => {
     const searchParams = useSearchParams();
@@ -30,7 +30,7 @@ const MeetingRoom = () => {
 
     const CallLayout = () => {
         switch (Layout) {
-            case 'slidebar':
+            case 'Grid':
                 return <PaginatedGridLayout />;
             case 'speaker-right':
                 return <SpeakerLayout participantsBarPosition="left" />;

@@ -95,7 +95,7 @@ const CallList = ({ type }: { type: 'ended' | 'upcoming' | 'recording' }) => {
                         link={
                             type === 'recording'
                                 ? (meeting as CallRecording).url
-                                : `${process.env.LOCALHOST_URL}/meeting/${(meeting as Call).id}`
+                                : `${process.env.NEXT_PUBLIC_LOCALHOST_URL}/meeting/${(meeting as Call).id}`
                         }
                         buttonIcon1={type === 'recording' ? '/icons/play.svg' : undefined}
                         buttonText={type === 'recording' ? 'Play' : 'Start'}
