@@ -8,12 +8,12 @@ const CopyLinkpop = () => {
     const [visible, setVisibile] = useState<ReactNode>(true);
     const link = useParams();
     const meetingLink = `localhost:3000/meeting/${link?.id}`;
-
+    console.log(meetingLink)
     return (
         <>
             {visible && <div className='w-full rounded-md  text-white bg-[#1166ee8f] relative'>
                 <Button onClick={() => setVisibile(false)}>
-                    <RxCross1  className='bg-transparent border-none' />
+                    <RxCross1 className='bg-transparent border-none' />
                 </Button>
                 <div className="w-[20vw] h-[15vh]  flex justify-center items-center flex-col gap-5">
                     <h1>Meeting-Link</h1>
